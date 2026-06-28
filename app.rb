@@ -26,10 +26,14 @@ post '/callback' do
 
   events = client.parse_events_from(body)
   events.each do |event|
-    if event.is_a?(Line::Bot::Event::Message) && 
-       event.type == Line::Bot::Event::MessageType::Text
-      message = { type: 'text', text: event.message['text'] }
-      client.reply_message(event['replyToken'], message)
+    if event.is_a?(Line::Bot::Event::Message)
+      if event.type == Line::Bot::Event::MessageType::Text
+        message = { type: 'text', text: event.message['text'] }
+        client.reply_message(event['replyToken'], message)
+      elsif event.type == Line::Bot::Event::MessageType::Image
+        message = { type: 'text', text: '画像です' }
+        client.reply_message(event['replyToken'], message)
+      end
     end
   end
   'OK'
