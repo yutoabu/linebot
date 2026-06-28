@@ -18,5 +18,18 @@
         "dbaeumer.vscode-eslint"
       ]
     }
+  },
+
+  // ポート4567番をあらかじめポートフォワードの対象に設定
+  "forwardPorts": [4567],
+
+  // ポートフォワード時のデフォルト公開設定を「Public」にする
+  // (LINE Webhookからアクセスできるようにするため)
+  "portsAttributes": {
+    "4567": {
+      "label": "LINE Bot App",
+      "onAutoForward": "notify",
+      "visibility": "public"
+    }
   }
 }
