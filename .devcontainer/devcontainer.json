@@ -1,0 +1,22 @@
+{
+  "name": "Ruby LINE Bot",
+  "image": "mcr.microsoft.com/devcontainers/ruby:4.0",
+
+  // Git LFSを自動的にインストールする開発コンテナの標準機能（Feature）
+  "features": {
+    "ghcr.io/devcontainers/features/git-lfs:1": {}
+  },
+
+  // 起動時に自動で bundle install を実行する設定
+  "postCreateCommand": "bundle install",
+
+  // 開発を便利にするVS Code拡張機能
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "Shopify.ruby-lsp",
+        "dbaeumer.vscode-eslint"
+      ]
+    }
+  }
+}
