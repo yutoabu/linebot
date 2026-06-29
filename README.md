@@ -16,6 +16,7 @@ linebot/
 │           ├── message_handler.rb  # メッセージハンドラー（ディスパッチャー）
 │           ├── text_handler.rb     # テキストメッセージハンドラー
 │           └── image_handler.rb    # 画像メッセージハンドラー
+│           └── sticker_handler.rb  # スタンプメッセージハンドラー
 ├── .env                            # 環境変数（.gitignoreに含まれる）
 ├── .ruby-version                   # Ruby バージョン指定
 ├── Gemfile                         # Gemの定義
