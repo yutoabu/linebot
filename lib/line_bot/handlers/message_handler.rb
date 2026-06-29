@@ -7,6 +7,8 @@ module LineBot
           TextHandler.handle(event)
         when Line::Bot::Event::MessageType::Image
           ImageHandler.handle(event)
+        when Line::Bot::Event::MessageType::Sticker
+          StampHandler.handle(event)
         end
       end
     end
